@@ -5,7 +5,7 @@ require_once 'crud/crud.php';
 if (isset($_POST['login'])) {
     $Username = $_POST['Username'];
     $password = $_POST['Password'];
-    $result = $crud->read('tbluser', 'Username = :Username', ['Username' => $Username]);
+    $result = $crud->read('tbladmin', 'Username = :Username', ['Username' => $Username]);
     if (!$result) {
         $_SESSION['error'] = 'Cannot find an account with the provided Username';
         header('Location: index.php');

@@ -47,16 +47,21 @@ include "../../db_con/conn.php"; // Assuming you have already included your data
 include "../../crud/crud.php";
 // Create a new CRUD instance using your existing $conn connection
 
-
 // Define the SQL query and condition
-$sql = "SELECT auditrai.UserID, tbluser.Username, auditrai.Description, auditrai.Timelog FROM auditrai  JOIN tbluser on auditrai.UserID = tbluser.Id";
+$sql = "SELECT auditrail.UserID, tbladmin.Username, auditrail.Description, auditrail.Timelog 
+        FROM auditrail  
+        JOIN tbladmin ON auditrail.UserID = tbladmin.Id";
 
 $condition = ''; // Add your WHERE condition here if needed
 
 try {
-    // Use the CRUD read method to execute the query and fetch results
-    $results = $crud->read($sql, $condition);
-    
+    // Prepare and execute the query
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    // Fetch the results
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     // Loop through the results and display them
     foreach ($results as $row) {
         echo "<tr>";

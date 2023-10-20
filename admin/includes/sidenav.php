@@ -266,7 +266,7 @@
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Tables
+                            Audit Trail
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -280,7 +280,7 @@
                         <li class="nav-item">
                             <a href="../tables/data.html" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
+                                <p>Record Admin Audit Tail</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -666,6 +666,9 @@
                         <p>Informational</p>
                     </a>
                 </li>
+                
+              <a href="../../logout.php" class="nav-header" >Logout</a>
+             
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
