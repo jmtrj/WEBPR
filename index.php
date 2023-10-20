@@ -1,8 +1,10 @@
 <?php
 session_start();
+
 if (isset($_SESSION['ADMIN'])) {
-    header('location:admin/dashboard/index.php');
+    header('location:admin/dashboard/index');
 }
+
 if (isset($_SESSION['USER'])) {
     header('location:user/dashboard/index');
 }
